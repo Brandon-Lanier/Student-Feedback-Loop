@@ -11,15 +11,18 @@ import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
 import Support from '../Support/Support';
 import ThankYou from '../ThankYou/ThankYou';
-import Understand from '../Understand/Understand'
+import Understand from '../Understand/Understand';
+
 
 
 function App() {
+
 
   return (
     <Router>
       <div className='App'>
         <Header />
+        <div className="feedback-area">
         <Route path='/' exact>
           <h1>Welcome</h1>
         </Route>
@@ -42,7 +45,8 @@ function App() {
           <ThankYou />
         </Route>
       </div>
-    </Router>
+    </div>
+    </Router >
   );
 }
 
