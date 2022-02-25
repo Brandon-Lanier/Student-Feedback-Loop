@@ -11,13 +11,26 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import Swal from 'sweetalert2';
+import { useHistory } from 'react-router-dom';
+
 
 function Feeling() {
 
     const [feeling, setFeeling] = useState('');
 
+    const dispatch = useDispatch();
+    const history = useHistory();
+
     const handleSubmit = () => {
         console.log(feeling);
+        if (feeling) 
+            {dispatch({type: 'ADD_FEELING', payload: feeling})
+            history.push('/understand');
+        } else {
+            Swal.fire('Please enter a selection!')
+        }
     }
 
     return (
@@ -25,7 +38,7 @@ function Feeling() {
             <Card sx={{ width: 700 }} >
                 <CardContent>
                     <Typography gutterBottom variant="h5">
-                        How are you feeling?
+                        How are you feeling today?
                     </Typography>
                         <FormControl>
                             <FormLabel id="radio-buttons-group-label">Feeling</FormLabel>
@@ -48,8 +61,8 @@ function Feeling() {
                    
                 </CardContent>
                 <CardActions >
-                    <Button size="medium" variant="">Go Back</Button>
-                    <Button size="medium" onClick={handleSubmit}>Next</Button>
+                    <Button size="medium" variant="outlined">Go Back</Button>
+                    <Button size="medium" variant="contained" onClick={handleSubmit}>Next</Button>
                 </CardActions>
             </Card>
 
