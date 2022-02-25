@@ -45,7 +45,7 @@ function Understand() {
                         How well are you understanding the content?
                     </Typography>
                         <FormControl>
-                            <FormLabel id="radio-buttons-group-label">Feeling</FormLabel>
+                            <FormLabel id="radio-buttons-group-label">Understanding?</FormLabel>
                             <RadioGroup
                                 row
                                 aria-labelledby="radio-buttons-group-label"
