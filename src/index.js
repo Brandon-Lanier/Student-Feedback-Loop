@@ -8,9 +8,9 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
 let feedback = {
-    feeling: '',
-    understanding: '',
-    support: '',
+    feeling: 0,
+    understanding: 0,
+    support: 0,
     comments: ''
 };
 
