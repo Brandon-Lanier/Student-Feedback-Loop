@@ -6,7 +6,13 @@ function AdminItem({row, getFeedback}) {
 
 
     const handleFlag = () => {
-        console.log(row.id);
+        axios.put(`/feedback/${row.id}`, row)
+        .then(response => {
+            console.log('Updated Flag');
+            getFeedback();
+        }).catch(error => {
+            console.log('Failed to updated', error);
+        })
     }
 
     const handleDelete = () => {

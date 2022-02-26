@@ -43,4 +43,17 @@ router.delete('/:id', (req, res) => {
     })
 })
 
+router.put('/:id', (req, res) => {
+    const id = req.params.id;
+    let flagged = !req.body.flagged
+    console.log(flagged);
+    const qryTxt = `UPDATE "feedback" SET "flagged"= $1 WHERE "id" = $2`
+    pool.query(qryTxt, [flagged, id])
+    .then(result => {
+        res.sendStatus(201)
+    }).catch(err => {
+        res.sendStatus(500);
+    })
+})
+
 module.exports = router;
