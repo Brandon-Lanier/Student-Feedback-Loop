@@ -12,7 +12,8 @@ import { createTheme, ThemeProvider } from '@mui/material';
 const theme = createTheme({
     palette: {
       primary: {
-          main: '#07aa9e'
+          main: '#07aa9e',
+          contrastText: '#fff'
       },
       secondary: {
           main: '#b7b7a4'
@@ -41,6 +42,8 @@ const feedbackReducer = (state = feedback, action) => {
     }
     return state;
 }
+
+
 
 const storeInstance = createStore(
     combineReducers(

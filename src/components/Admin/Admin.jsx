@@ -3,11 +3,13 @@ import { useState } from "react";
 import { useEffect } from "react";
 import './Admin.css'
 import AdminItem from '../AdminItem/AdminItem';
+import FlaggedItem from '../FlaggedItem/FlaggedItem';
 
 
 function Admin() {
 
     const [adminFeed, setAdminFeed] = useState([]);
+    const [flagged, setFlagged] = useState([]);
 
     useEffect(() => {
         getFeedback()
@@ -16,12 +18,20 @@ function Admin() {
     const getFeedback = () => {
         axios.get('/feedback')
         .then(response => {
-            console.log(response.data)
-            setAdminFeed(response.data);
+            setAdminFeed(response.data)
+            handleFlagged();
         }).catch(error => {
             console.log('Failed to get data', error);
         })
     }
+
+    const handleFlagged = () => {
+        for (let feed of adminFeed) {
+            if (feed.flagged === true) {
+                setFlagged(feed);
+            }
+    }
+}
 
 
     return (
@@ -41,6 +51,27 @@ function Admin() {
                     {adminFeed.map((row) => (
                         <tr key={row.id}>
                             <AdminItem row={row} getFeedback={getFeedback}/>
+                        </tr>
+                    ))}
+                </tbody>
+
+            </table>
+
+            <table className="flagged-table">
+                <thead>
+                    <tr>
+                        <th>Feeling</th>
+                        <th>Understanding</th>
+                        <th>Support</th>
+                        <th>Comments</th>
+                        <th>Flag</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {flagged.map((row) => (
+                        <tr key={row.id}>
+                            <FlaggedItem row={row} getFeedback={getFeedback}/>
                         </tr>
                     ))}
                 </tbody>
@@ -84,4 +115,4 @@ export default Admin;
 //       </Table>
 //     </TableContainer>
 //     )
-// }
+// 
