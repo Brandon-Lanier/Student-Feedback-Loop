@@ -6,9 +6,9 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import Swal from 'sweetalert2';
 import { useHistory } from 'react-router-dom';
 import TextField from '@mui/material/TextField';
+import { Slide } from '@mui/material';
 
 
 function Comments() {
@@ -31,13 +31,12 @@ function Comments() {
 
     return (
         <>
+            <Slide direction="up" in="open" mountOnEnter unmountOnExit>
             <Card sx={{ width: 700 }} >
                 <CardContent>
                     <Typography gutterBottom variant="h5">
                         How well are you being supported?
                     </Typography>
-                    
-
                         <TextField
                             id="standard-multiline-static"
                             label="Comments"
@@ -51,12 +50,12 @@ function Comments() {
 
 
                 </CardContent>
-                <CardActions >
+                <CardActions className="cardActions">
                     <Button size="medium" variant="outlined" onClick={goBack}>Go Back</Button>
                     <Button size="medium" variant="contained" onClick={handleSubmit}>Next</Button>
                 </CardActions>
             </Card>
-
+            </Slide>
         </>
 
     )

@@ -10,6 +10,7 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
+import { Slide } from '@mui/material';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import Swal from 'sweetalert2';
@@ -39,6 +40,7 @@ function Understand() {
 
     return (
         <>
+        <Slide direction="up" in="open" mountOnEnter unmountOnExit>
             <Card sx={{ width: 700 }} >
                 <CardContent>
                     <Typography gutterBottom variant="h5">
@@ -64,12 +66,12 @@ function Understand() {
                         </FormControl>
                    
                 </CardContent>
-                <CardActions >
+                <CardActions className="cardActions">
                     <Button size="medium" variant="outlined" onClick={goBack}>Go Back</Button>
                     <Button size="medium" variant="contained" onClick={handleSubmit}>Next</Button>
                 </CardActions>
             </Card>
-
+            </Slide>
         </>
 
     )

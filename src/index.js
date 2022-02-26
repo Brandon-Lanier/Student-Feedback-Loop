@@ -6,13 +6,26 @@ import registerServiceWorker from './registerServiceWorker';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
+import { createTheme, ThemeProvider } from '@mui/material';
 
-let feedback = {
+
+const theme = createTheme({
+    palette: {
+      primary: {
+          main: '#07aa9e'
+      },
+      secondary: {
+          main: '#b7b7a4'
+      }
+    }
+  });
+
+const feedback = {
     feeling: 0,
     understanding: 0,
     support: 0,
     comments: ''
-};
+}
 
 const feedbackReducer = (state = feedback, action) => {
     if (action.type === 'ADD_FEELING') {
@@ -23,6 +36,8 @@ const feedbackReducer = (state = feedback, action) => {
         return {...state, support: action.payload}
     } else if (action.type === "ADD_COMMENTS") {
         return {...state, comments: action.payload}
+    } else if (action.type === 'CLEAR_FEEDBACK') {
+        return feedback;
     }
     return state;
 }
@@ -38,7 +53,9 @@ const storeInstance = createStore(
 
 ReactDOM.render(
     <Provider store={storeInstance}>
+    <ThemeProvider theme={theme}>
         <App />
+    </ThemeProvider>
     </Provider>
     , document.getElementById('root'));
 registerServiceWorker();

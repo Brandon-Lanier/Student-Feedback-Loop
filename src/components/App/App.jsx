@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { HashRouter as Router, Route } from 'react-router-dom';
+import { HashRouter as Router, Link, Route } from 'react-router-dom';
 import { useState } from 'react';
 import '@fontsource/roboto/400.css';
 import './App.css';
@@ -12,6 +12,7 @@ import Review from '../Review/Review';
 import Support from '../Support/Support';
 import ThankYou from '../ThankYou/ThankYou';
 import Understand from '../Understand/Understand';
+import Home from '../Home/Home';
 
 
 
@@ -23,8 +24,8 @@ function App() {
       <div className='App'>
         <Header />
         <div className="feedback-area">
-        <Route path='/' exact>
-          <h1>Welcome</h1>
+        <Route path="/" exact>
+          <Home />
         </Route>
         <Route path='/feeling'>
           <Feeling />
@@ -43,6 +44,9 @@ function App() {
         </Route>
         <Route path='/thankyou'>
           <ThankYou />
+        </Route>
+        <Route path='/admin'>
+          <Admin />
         </Route>
       </div>
     </div>
