@@ -2,27 +2,35 @@ import DeleteSweepIcon from '@mui/icons-material/DeleteSweep';
 import EmojiFlagsIcon from '@mui/icons-material/EmojiFlags';
 import axios from 'axios';
 
-function AdminItem({row, getFeedback}) {
+function AdminItem({row, getFeedback, handleFlag, handleDelete}) {
 
 
-    const handleFlag = () => {
-        axios.put(`/feedback/${row.id}`, row)
-        .then(response => {
-            console.log('Updated Flag');
-            getFeedback();
-        }).catch(error => {
-            console.log('Failed to updated', error);
-        })
+    // const handleFlag = () => {
+    //     axios.put(`/feedback/${row.id}`, row)
+    //     .then(response => {
+    //         console.log('Updated Flag');
+    //         getFeedback();
+    //     }).catch(error => {
+    //         console.log('Failed to updated', error);
+    //     })
+    // }
+
+    // const handleDelete = () => {
+    //     axios.delete(`/feedback/${row.id}`)
+    //     .then(response => {
+    //         console.log('You deleted it');
+    //         getFeedback();
+    //     }).catch(error => {
+    //         console.log('Failed to delete');
+    //     })
+    // }
+
+    let callFlag = () => {
+        handleFlag(row.id, row)
     }
 
-    const handleDelete = () => {
-        axios.delete(`/feedback/${row.id}`)
-        .then(response => {
-            console.log('You deleted it');
-            getFeedback();
-        }).catch(error => {
-            console.log('Failed to delete');
-        })
+    let callDelete = () => {
+        handleDelete(row.id)
     }
 
     return (
@@ -32,8 +40,8 @@ function AdminItem({row, getFeedback}) {
             <td>{row.understanding}</td>
             <td>{row.support}</td>
             <td>{row.comments}</td>
-            <td><EmojiFlagsIcon onClick={handleFlag}/></td>
-            <td><DeleteSweepIcon onClick={handleDelete}/></td>
+            <td><EmojiFlagsIcon onClick={callFlag}/></td>
+            <td><DeleteSweepIcon onClick={callDelete}/></td>
             
         </>
 

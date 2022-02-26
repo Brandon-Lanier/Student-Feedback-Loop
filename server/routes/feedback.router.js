@@ -22,12 +22,22 @@ router.post('/', (req, res) => {
 })
 
 router.get('/', (req, res) => {
-    const qryTxt = `SELECT * FROM "feedback" ORDER BY "date" ASC;`
+    const qryTxt = `SELECT * FROM "feedback" WHERE "flagged" = false;`
     pool.query(qryTxt)
     .then(result => {
         res.send(result.rows)
     }).catch(err => {
         res.sendStatus(500);
+    })
+})
+
+router.get('/flagged', (req, res) => {
+    const qryTxt = `SELECT * FROM "feedback" WHERE "flagged" = true;`
+    pool.query(qryTxt)
+    .then(result => {
+        res.send(result.rows);
+    }).catch(err => {
+        res.sendStatus(500)
     })
 })
 

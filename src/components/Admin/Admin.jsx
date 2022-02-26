@@ -6,33 +6,56 @@ import AdminItem from '../AdminItem/AdminItem';
 import FlaggedItem from '../FlaggedItem/FlaggedItem';
 
 
+
 function Admin() {
 
     const [adminFeed, setAdminFeed] = useState([]);
     const [flagged, setFlagged] = useState([]);
 
     useEffect(() => {
-        getFeedback()
+        getFeedback();
+        getFlagged()
     }, [])
 
     const getFeedback = () => {
         axios.get('/feedback')
         .then(response => {
             setAdminFeed(response.data)
-            handleFlagged();
         }).catch(error => {
             console.log('Failed to get data', error);
         })
     }
 
-    const handleFlagged = () => {
-        for (let feed of adminFeed) {
-            if (feed.flagged === true) {
-                setFlagged(feed);
-            }
-    }
+    const getFlagged = () => {
+        axios.get('/feedback/flagged')
+        .then(response => {
+            setFlagged(response.data)
+        }).catch(error => {
+            console.log('Failed to get flagged', error);
+        })
 }
 
+const handleFlag = (id, row) => {
+    axios.put(`/feedback/${id}`, row)
+    .then(response => {
+        console.log('Updated Flag');
+        getFeedback();
+        getFlagged();
+    }).catch(error => {
+        console.log('Failed to updated', error);
+    })
+}
+
+const handleDelete = (id) => {
+    axios.delete(`/feedback/${id}`)
+    .then(response => {
+        console.log('You deleted it');
+        getFeedback();
+        getFlagged();
+    }).catch(error => {
+        console.log('Failed to delete');
+    })
+}
 
     return (
         <div>
@@ -50,14 +73,17 @@ function Admin() {
                 <tbody>
                     {adminFeed.map((row) => (
                         <tr key={row.id}>
-                            <AdminItem row={row} getFeedback={getFeedback}/>
+                            <AdminItem row={row} 
+                            handleDelete={handleDelete}
+                            handleFlag={handleFlag}
+                            />
                         </tr>
                     ))}
                 </tbody>
 
             </table>
-
-            <table className="flagged-table">
+            
+            {flagged.length !== 0 && <table className="styled-table">
                 <thead>
                     <tr>
                         <th>Feeling</th>
@@ -71,13 +97,15 @@ function Admin() {
                 <tbody>
                     {flagged.map((row) => (
                         <tr key={row.id}>
-                            <FlaggedItem row={row} getFeedback={getFeedback}/>
+                            <FlaggedItem row={row} 
+                            handleDelete={handleDelete}
+                            handleFlag={handleFlag}/>
                         </tr>
                     ))}
                 </tbody>
 
             </table>
-
+            }
         </div>
 
     )
