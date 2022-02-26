@@ -14,6 +14,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import Swal from 'sweetalert2';
 import { useHistory } from 'react-router-dom';
+import { Slide } from '@mui/material';
 
 
 function Support() {
@@ -39,6 +40,7 @@ function Support() {
 
     return (
         <>
+        <Slide direction="up" in="open" mountOnEnter unmountOnExit>
             <Card sx={{ width: 700 }} >
                 <CardContent>
                     <Typography gutterBottom variant="h5">
@@ -64,12 +66,12 @@ function Support() {
                         </FormControl>
                    
                 </CardContent>
-                <CardActions >
+                <CardActions className="cardActions">
                     <Button size="medium" variant="outlined" onClick={goBack}>Go Back</Button>
                     <Button size="medium" variant="contained" onClick={handleSubmit}>Next</Button>
                 </CardActions>
             </Card>
-
+            </Slide>
         </>
 
     )

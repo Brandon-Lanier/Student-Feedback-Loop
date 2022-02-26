@@ -4,7 +4,7 @@
 }
 
 .App-header {
-  background-color: #033076;
+  background-color: #07aa9e;
   min-height: 70px;
   padding: 20px;
   color: white;
@@ -27,3 +27,14 @@ h4 {
   display: flex;
   justify-content: center;
 }
+
+.cardActions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.review-buttons {
+  display: flex;
+  justify-content: center;
+}
+

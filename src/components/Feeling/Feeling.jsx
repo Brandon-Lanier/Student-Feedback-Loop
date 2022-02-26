@@ -14,6 +14,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import Swal from 'sweetalert2';
 import { useHistory } from 'react-router-dom';
+import Slide from '@mui/material/Slide';
 
 
 function Feeling() {
@@ -35,6 +36,7 @@ function Feeling() {
 
     return (
         <>
+            <Slide direction="up" in="open" out="close" mountOnEnter unmountOnExit>
             <Card sx={{ width: 700 }} >
                 <CardContent>
                     <Typography gutterBottom variant="h5">
@@ -60,11 +62,12 @@ function Feeling() {
                         </FormControl>
                    
                 </CardContent>
-                <CardActions >
+                <CardActions className="cardActions" >
                     <Button size="medium" variant="outlined">Go Back</Button>
                     <Button size="medium" variant="contained" onClick={handleSubmit}>Next</Button>
                 </CardActions>
             </Card>
+            </Slide>
 
         </>
 
