@@ -13,7 +13,7 @@ The app runs through 3 ratable sections, a comment board and a final review befo
 The app also comes with an admin feature that can be accessed from the top left menu bar.  The admin section contains all user inputs that have been stored in the database, and from there, the admin can either delete an entry or flag it for further review.  Upon flagging, the feedback will be displayed in a separate section to distinguish the need to address it.
 ## Screen Shot
 
-![alt text](https://github.com/Brandon-Lanier/weekend-redux-feedback-loop/blob/master/server/public/images/screencapture.gif?raw=true)
+![alt text](https://github.com/Brandon-Lanier/weekend-redux-feedback-loop/blob/master/public/images/screencapture.gif?raw=true)
 ### Prerequisites
 
 - Internet Browser
