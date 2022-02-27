@@ -21,14 +21,14 @@ import LinearProgress from '@mui/material/LinearProgress';
 function Feeling() {
 
     const [feeling, setFeeling] = useState('');
-
     const dispatch = useDispatch();
+
     const history = useHistory();
 
     const handleSubmit = () => {
         console.log(feeling);
-        if (feeling) 
-            {dispatch({type: 'ADD_FEELING', payload: feeling})
+        if (feeling) {
+            dispatch({ type: 'ADD_FEELING', payload: feeling })
             history.push('/understand');
         } else {
             Swal.fire({
@@ -38,18 +38,19 @@ function Feeling() {
         }
     }
 
+    const goBack = () => {
+        history.push('/')
+    }
+
     return (
         <>
             <Slide direction="up" in="open" out="close" mountOnEnter unmountOnExit>
-            
-            <Card sx={{ width: 700 }} >
-                <LinearProgress  variant="determinate" value='20' />
-                
-                <CardContent>
-                
-                    <Typography gutterBottom variant="h5">
-                        How are you feeling today?
-                    </Typography>
+                <Card sx={{ width: 700 }} >
+                    <LinearProgress variant="determinate" value={20} />
+                    <CardContent>
+                        <Typography gutterBottom variant="h5">
+                            How are you feeling today?
+                        </Typography>
                         <FormControl>
                             <FormLabel id="radio-buttons-group-label">Feeling</FormLabel>
                             <RadioGroup
@@ -65,18 +66,16 @@ function Feeling() {
                                 <FormControlLabel value="3" control={<Radio />} label="3" />
                                 <FormControlLabel value="4" control={<Radio />} label="4" />
                                 <FormControlLabel value="5" control={<Radio />} label="5" />
-    
                             </RadioGroup>
                         </FormControl>
-                   
-                </CardContent>
-                <CardActions className="cardActions" >
-                    <Button size="medium" variant="outlined">Go Back</Button>
-                    <Button size="medium" variant="contained" onClick={handleSubmit}>Next</Button>
-                </CardActions>
-            </Card>
+                    </CardContent>
+                    <CardActions className="cardActions" >
+                        <Button size="medium" variant="outlined" onClick={goBack}>Go Back</Button>
+                        <Button size="medium" variant="contained" onClick={handleSubmit}>Next</Button>
+                    </CardActions>
+                </Card>
             </Slide>
-            
+
         </>
 
     )

@@ -39,7 +39,7 @@ function Review() {
     return (
         <Slide direction="up" in="open" mountOnEnter unmountOnExit>
         <Card sx={{ width: 700 }} >
-        <LinearProgress variant="determinate" value='100' />
+        <LinearProgress variant="determinate" value={100} />
             <CardContent className="review-feedback">
                 <Typography gutterBottom variant="h5">
                     Review your feedback

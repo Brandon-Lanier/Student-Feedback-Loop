@@ -44,11 +44,10 @@ const feedbackReducer = (state = feedback, action) => {
 }
 
 
-
 const storeInstance = createStore(
     combineReducers(
         {
-        feedbackReducer
+        feedbackReducer,
         }
     ),
     applyMiddleware(logger)

@@ -46,7 +46,7 @@ function Understand() {
         <>
         <Slide direction="up" in="open" mountOnEnter unmountOnExit>
             <Card sx={{ width: 700 }} >
-            <LinearProgress variant="determinate" value='40' />
+            <LinearProgress variant="determinate" value={40} />
                 <CardContent>
                     <Typography gutterBottom variant="h5">
                         How well are you understanding the content?

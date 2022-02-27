@@ -3,9 +3,11 @@ import { Typography } from "@mui/material";
 import { Button } from "@mui/material";
 import { useHistory } from "react-router-dom";
 
+
 function Home() {
 
     const history = useHistory();
+
     const start = () => {
         history.push('/feeling')
     }

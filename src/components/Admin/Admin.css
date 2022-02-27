@@ -11,8 +11,6 @@
     background-color: #07aa9e;
     color: #ffffff;
     text-align: left;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
 }
 
 .styled-table th,
@@ -35,11 +33,6 @@
 .styled-table tbody tr.active-row {
     font-weight: bold;
     color: #07aa9e;
-}
-
-.styled-table thead tr th {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
 }
 
 .flagged-table {

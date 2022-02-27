@@ -1,5 +1,3 @@
-import DeleteSweepIcon from '@mui/icons-material/DeleteSweep';
-import EmojiFlagsIcon from '@mui/icons-material/EmojiFlags';
 import FlagIcon from '@mui/icons-material/Flag';
 import PopUp from '../PopUp/PopUp';
 
@@ -18,9 +16,8 @@ function FlaggedItem({ row, handleFlag, handleDelete }) {
             <td>{row.understanding}</td>
             <td>{row.support}</td>
             <td>{row.comments}</td>
-            <td><FlagIcon onClick={callFlag} cursor="pointer"/></td>
+            <td><FlagIcon onClick={callFlag} cursor="pointer" /></td>
             <td><PopUp callDelete={callDelete} /></td>
-
         </>
     )
 }

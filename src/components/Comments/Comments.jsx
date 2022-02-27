@@ -33,12 +33,12 @@ function Comments() {
     return (
         <>
             <Slide direction="up" in="open" mountOnEnter unmountOnExit>
-            <Card sx={{ width: 700 }} >
-            <LinearProgress variant="determinate" value='80' />
-                <CardContent>
-                    <Typography gutterBottom variant="h5">
-                        How well are you being supported?
-                    </Typography>
+                <Card sx={{ width: 700 }} >
+                    <LinearProgress variant="determinate" value='80' />
+                    <CardContent>
+                        <Typography gutterBottom variant="h5">
+                            How well are you being supported?
+                        </Typography>
                         <TextField
                             id="standard-multiline-static"
                             label="Comments"
@@ -49,14 +49,12 @@ function Comments() {
                             variant="standard"
                             onChange={(e) => setComments(e.target.value)}
                         />
-
-
-                </CardContent>
-                <CardActions className="cardActions">
-                    <Button size="medium" variant="outlined" onClick={goBack}>Go Back</Button>
-                    <Button size="medium" variant="contained" onClick={handleSubmit}>Next</Button>
-                </CardActions>
-            </Card>
+                    </CardContent>
+                    <CardActions className="cardActions">
+                        <Button size="medium" variant="outlined" onClick={goBack}>Go Back</Button>
+                        <Button size="medium" variant="contained" onClick={handleSubmit}>Next</Button>
+                    </CardActions>
+                </Card>
             </Slide>
         </>
 
