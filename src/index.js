@@ -55,6 +55,7 @@ const storeInstance = createStore(
 
 ReactDOM.render(
     <Provider store={storeInstance}>
+    
     <ThemeProvider theme={theme}>
         <App />
     </ThemeProvider>
