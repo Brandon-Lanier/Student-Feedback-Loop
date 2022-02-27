@@ -27,8 +27,8 @@ function Understand() {
 
     const handleSubmit = () => {
         console.log(understand);
-        if (understand) 
-            {dispatch({type: 'ADD_UNDERSTAND', payload: understand})
+        if (understand) {
+            dispatch({ type: 'ADD_UNDERSTAND', payload: understand })
             history.push('/support');
         } else {
             Swal.fire({
@@ -44,13 +44,13 @@ function Understand() {
 
     return (
         <>
-        <Slide direction="up" in="open" mountOnEnter unmountOnExit>
-            <Card sx={{ width: 700 }} >
-            <LinearProgress variant="determinate" value={40} />
-                <CardContent>
-                    <Typography gutterBottom variant="h5">
-                        How well are you understanding the content?
-                    </Typography>
+            <Slide direction="up" in="open" mountOnEnter unmountOnExit>
+                <Card sx={{ width: 700 }} >
+                    <LinearProgress variant="determinate" value={40} />
+                    <CardContent>
+                        <Typography gutterBottom variant="h5">
+                            How well are you understanding the content?
+                        </Typography>
                         <FormControl>
                             <FormLabel id="radio-buttons-group-label">Understanding?</FormLabel>
                             <RadioGroup
@@ -66,16 +66,15 @@ function Understand() {
                                 <FormControlLabel value="3" control={<Radio />} label="3" />
                                 <FormControlLabel value="4" control={<Radio />} label="4" />
                                 <FormControlLabel value="5" control={<Radio />} label="5" />
-    
+
                             </RadioGroup>
                         </FormControl>
-                   
-                </CardContent>
-                <CardActions className="cardActions">
-                    <Button size="medium" variant="outlined" onClick={goBack}>Go Back</Button>
-                    <Button size="medium" variant="contained" onClick={handleSubmit}>Next</Button>
-                </CardActions>
-            </Card>
+                    </CardContent>
+                    <CardActions className="cardActions">
+                        <Button size="medium" variant="outlined" onClick={goBack}>Go Back</Button>
+                        <Button size="medium" variant="contained" onClick={handleSubmit}>Next</Button>
+                    </CardActions>
+                </Card>
             </Slide>
         </>
 
