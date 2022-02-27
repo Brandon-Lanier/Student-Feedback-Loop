@@ -19,11 +19,11 @@ function ThankYou() {
         <Slide direction="right" in="open" mountOnEnter unmountOnExit>
         <Card sx={{ width: 700 }} >
             <CardContent>
-                <Typography gutterBottom variant="h3">
-                    Thank You For Your Feedback
+                <Typography gutterBottom variant="h5">
+                    Thank You For Your Feedback!
                 </Typography>
                 <Typography variant="b1">
-                    
+                We value your input.
                 </Typography>
             </CardContent>
             <CardActions className="review-buttons">

@@ -15,9 +15,11 @@ function Home() {
             <Typography variant="h3">
                 Welcome
             </Typography>
+            <Typography>&nbsp;</Typography> 
             <Typography variant="h6">
                 Please submit your daily feedback.  We appreciate your insight!
-            </Typography>   
+            </Typography>  
+            <Typography>&nbsp;</Typography> 
             <Button color="primary" onClick={start} variant="contained">
                 Start Feedback
             </Button>
