@@ -2,6 +2,7 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
+import { LinearProgress } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
@@ -38,6 +39,7 @@ function Review() {
     return (
         <Slide direction="up" in="open" mountOnEnter unmountOnExit>
         <Card sx={{ width: 700 }} >
+        <LinearProgress variant="determinate" value='100' />
             <CardContent className="review-feedback">
                 <Typography gutterBottom variant="h5">
                     Review your feedback

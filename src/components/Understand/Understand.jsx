@@ -15,6 +15,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import Swal from 'sweetalert2';
 import { useHistory } from 'react-router-dom';
+import { LinearProgress } from '@mui/material';
 
 
 function Understand() {
@@ -42,6 +43,7 @@ function Understand() {
         <>
         <Slide direction="up" in="open" mountOnEnter unmountOnExit>
             <Card sx={{ width: 700 }} >
+            <LinearProgress variant="determinate" value='40' />
                 <CardContent>
                     <Typography gutterBottom variant="h5">
                         How well are you understanding the content?

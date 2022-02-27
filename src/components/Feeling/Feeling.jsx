@@ -18,6 +18,8 @@ import Slide from '@mui/material/Slide';
 import Snackbar from '@mui/material/Snackbar';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
+import PopUp from '../PopUp/PopUp'
+import LinearProgress from '@mui/material/LinearProgress';
 
 
 function Feeling() {
@@ -40,8 +42,12 @@ function Feeling() {
     return (
         <>
             <Slide direction="up" in="open" out="close" mountOnEnter unmountOnExit>
+            
             <Card sx={{ width: 700 }} >
+                <LinearProgress variant="determinate" value='20' />
+                
                 <CardContent>
+                
                     <Typography gutterBottom variant="h5">
                         How are you feeling today?
                     </Typography>
@@ -71,7 +77,7 @@ function Feeling() {
                 </CardActions>
             </Card>
             </Slide>
-
+            
         </>
 
     )

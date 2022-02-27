@@ -86,6 +86,11 @@ const handleDelete = (id) => {
             {flagged.length !== 0 && <table className="styled-table">
                 <thead>
                     <tr>
+                        <th>
+                            Flagged For Follow Up
+                        </th>
+                    </tr>
+                    <tr>
                         <th>Feeling</th>
                         <th>Understanding</th>
                         <th>Support</th>

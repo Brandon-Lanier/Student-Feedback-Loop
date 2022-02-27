@@ -1,13 +1,41 @@
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
+import { Link, useHistory } from 'react-router-dom';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import { useState } from 'react';
+import DropMenu from '../DropMenu/DropMenu'
+
 
 
 function Header() {
 
+    const history = useHistory();
+
+    const handleAdmin = () => {
+        history.push('/admin')
+    }
+
+
     return (
-        <header className='App-header'>
-            <h1 className='App-title'>Feedback!</h1>
-            <h4>Don't forget it!</h4>
-        </header>
-    )
+        <Box sx={{ flexGrow: 1 }}>
+            <AppBar position="static">
+                <Toolbar>
+                    <DropMenu />
+                    <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                        Daily Feedback!
+                    </Typography>
+                    <img src="images/prime.png"></img>
+                </Toolbar>
+            </AppBar>
+        </Box>
+    );
 }
+
 
 export default Header;
