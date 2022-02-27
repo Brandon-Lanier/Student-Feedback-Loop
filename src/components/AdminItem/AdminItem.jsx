@@ -1,29 +1,8 @@
 import DeleteSweepIcon from '@mui/icons-material/DeleteSweep';
 import EmojiFlagsIcon from '@mui/icons-material/EmojiFlags';
-import axios from 'axios';
-
-function AdminItem({row, getFeedback, handleFlag, handleDelete}) {
 
 
-    // const handleFlag = () => {
-    //     axios.put(`/feedback/${row.id}`, row)
-    //     .then(response => {
-    //         console.log('Updated Flag');
-    //         getFeedback();
-    //     }).catch(error => {
-    //         console.log('Failed to updated', error);
-    //     })
-    // }
-
-    // const handleDelete = () => {
-    //     axios.delete(`/feedback/${row.id}`)
-    //     .then(response => {
-    //         console.log('You deleted it');
-    //         getFeedback();
-    //     }).catch(error => {
-    //         console.log('Failed to delete');
-    //     })
-    // }
+function AdminItem({row, handleFlag, handleDelete}) {
 
     let callFlag = () => {
         handleFlag(row.id, row)

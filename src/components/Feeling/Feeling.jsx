@@ -15,9 +15,6 @@ import { useDispatch } from 'react-redux';
 import Swal from 'sweetalert2';
 import { useHistory } from 'react-router-dom';
 import Slide from '@mui/material/Slide';
-import Snackbar from '@mui/material/Snackbar';
-import IconButton from '@mui/material/IconButton';
-import CloseIcon from '@mui/icons-material/Close';
 import PopUp from '../PopUp/PopUp'
 import LinearProgress from '@mui/material/LinearProgress';
 
@@ -44,7 +41,7 @@ function Feeling() {
             <Slide direction="up" in="open" out="close" mountOnEnter unmountOnExit>
             
             <Card sx={{ width: 700 }} >
-                <LinearProgress variant="determinate" value='20' />
+                <LinearProgress  variant="determinate" value='20' />
                 
                 <CardContent>
                 

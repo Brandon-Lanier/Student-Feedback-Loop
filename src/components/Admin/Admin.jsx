@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import './Admin.css'
 import AdminItem from '../AdminItem/AdminItem';
 import FlaggedItem from '../FlaggedItem/FlaggedItem';
+import FlagIcon from '@mui/icons-material/Flag';
 
 
 
@@ -83,12 +84,10 @@ const handleDelete = (id) => {
 
             </table>
             
-            {flagged.length !== 0 && <table className="styled-table">
+            {flagged.length !== 0 && <table className="flagged-table">
                 <thead>
                     <tr>
-                        <th>
-                            Flagged For Follow Up
-                        </th>
+                       <th colspan="6" id="th-span">Flagged For Review</th>
                     </tr>
                     <tr>
                         <th>Feeling</th>
