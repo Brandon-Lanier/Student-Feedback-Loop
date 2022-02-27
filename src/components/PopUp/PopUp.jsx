@@ -4,9 +4,12 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import DeleteSweepIcon from '@mui/icons-material/DeleteSweep';
+import { useState } from 'react';
 
-function PopUp() {
-  const [open, setOpen] = React.useState(false);
+
+function PopUp({callDelete}) {
+  const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -18,9 +21,7 @@ function PopUp() {
 
   return (
     <div>
-      <Button variant="outlined" onClick={handleClickOpen}>
-        Open alert dialog
-      </Button>
+      <DeleteSweepIcon onClick={handleClickOpen} />
       <Dialog
         open={open}
         onClose={handleClose}
@@ -28,18 +29,17 @@ function PopUp() {
         aria-describedby="alert-dialog-description"
       >
         <DialogTitle id="alert-dialog-title">
-          {"Use Google's location service?"}
+          {"Are you sure you want to delete this?"}
         </DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-            Let Google help apps determine location. This means sending anonymous
-            location data to Google, even when no apps are running.
+            This action can not be undone!
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Disagree</Button>
-          <Button onClick={handleClose} autoFocus>
-            Agree
+          <Button onClick={handleClose}>Cancel</Button>
+          <Button onClick={callDelete} autoFocus>
+            Delete
           </Button>
         </DialogActions>
       </Dialog>

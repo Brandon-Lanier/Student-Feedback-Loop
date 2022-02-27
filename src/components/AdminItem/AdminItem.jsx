@@ -1,5 +1,6 @@
 import DeleteSweepIcon from '@mui/icons-material/DeleteSweep';
 import EmojiFlagsIcon from '@mui/icons-material/EmojiFlags';
+import PopUp from "../PopUp/PopUp";
 
 
 function AdminItem({row, handleFlag, handleDelete}) {
@@ -20,7 +21,7 @@ function AdminItem({row, handleFlag, handleDelete}) {
             <td>{row.support}</td>
             <td>{row.comments}</td>
             <td><EmojiFlagsIcon onClick={callFlag}/></td>
-            <td><DeleteSweepIcon onClick={callDelete}/></td>
+            <td><PopUp callDelete={callDelete}/></td>
             
         </>
 

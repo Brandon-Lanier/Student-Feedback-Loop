@@ -31,7 +31,10 @@ function Support() {
             {dispatch({type: 'ADD_SUPPORT', payload: support})
             history.push('/comments');
         } else {
-            Swal.fire('Please enter a selection!')
+            Swal.fire({
+                confirmButtonColor: '#07aa9e',
+                text: 'Please enter a selection!'
+            })
         }
     }
 
