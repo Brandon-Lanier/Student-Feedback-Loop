@@ -21,7 +21,7 @@ function PopUp({callDelete}) {
 
   return (
     <div>
-      <DeleteSweepIcon onClick={handleClickOpen} />
+      <DeleteSweepIcon onClick={handleClickOpen} cursor="pointer"/>
       <Dialog
         open={open}
         onClose={handleClose}

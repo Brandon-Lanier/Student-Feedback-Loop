@@ -18,8 +18,8 @@ function FlaggedItem({ row, handleFlag, handleDelete }) {
             <td>{row.understanding}</td>
             <td>{row.support}</td>
             <td>{row.comments}</td>
-            <td><FlagIcon onClick={callFlag}/></td>
-            <td><PopUp callDelete={callDelete}/></td>
+            <td><FlagIcon onClick={callFlag} cursor="pointer"/></td>
+            <td><PopUp callDelete={callDelete} /></td>
 
         </>
     )

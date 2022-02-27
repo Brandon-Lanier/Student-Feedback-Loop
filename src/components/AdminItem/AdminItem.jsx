@@ -20,8 +20,8 @@ function AdminItem({row, handleFlag, handleDelete}) {
             <td>{row.understanding}</td>
             <td>{row.support}</td>
             <td>{row.comments}</td>
-            <td><EmojiFlagsIcon onClick={callFlag}/></td>
-            <td><PopUp callDelete={callDelete}/></td>
+            <td><EmojiFlagsIcon onClick={callFlag} cursor="pointer"/></td>
+            <td><PopUp callDelete={callDelete} /></td>
             
         </>
 
