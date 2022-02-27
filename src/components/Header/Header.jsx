@@ -30,7 +30,7 @@ function Header() {
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                         Daily Feedback!
                     </Typography>
-                    <Button color="inherit" onClick={handleAdmin}>Admin</Button>
+                    <img src="images/prime.png"></img>
                 </Toolbar>
             </AppBar>
         </Box>
