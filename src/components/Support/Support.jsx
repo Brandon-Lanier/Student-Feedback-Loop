@@ -3,6 +3,7 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
+import { LinearProgress } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import CardHeader from '@mui/material/CardHeader';
 import Radio from '@mui/material/Radio';
@@ -42,6 +43,7 @@ function Support() {
         <>
         <Slide direction="up" in="open" mountOnEnter unmountOnExit>
             <Card sx={{ width: 700 }} >
+            <LinearProgress variant="determinate" value='60' />
                 <CardContent>
                     <Typography gutterBottom variant="h5">
                         How well are you being supported?
