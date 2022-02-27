@@ -1,5 +1,7 @@
 import FlagIcon from '@mui/icons-material/Flag';
 import PopUp from '../PopUp/PopUp';
+import { styled } from '@mui/material/styles';
+import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 
 function FlaggedItem({ row, handleFlag, handleDelete }) {
 
@@ -10,14 +12,26 @@ function FlaggedItem({ row, handleFlag, handleDelete }) {
     let callDelete = () => {
         handleDelete(row.id)
     }
+
+    const StyledTableCell = styled(TableCell)(({ theme }) => ({
+        [`&.${tableCellClasses.head}`]: {
+            backgroundColor: theme.palette.common.black,
+            color: theme.palette.common.white,
+        },
+        [`&.${tableCellClasses.body}`]: {
+            fontSize: 14,
+        },
+    }));
+
     return (
         <>
-            <td>{row.feeling}</td>
-            <td>{row.understanding}</td>
-            <td>{row.support}</td>
-            <td>{row.comments}</td>
-            <td><FlagIcon onClick={callFlag} cursor="pointer" /></td>
-            <td><PopUp callDelete={callDelete} /></td>
+            <StyledTableCell align="center">{row.feeling}</StyledTableCell>
+            <StyledTableCell align="center">{row.understanding}</StyledTableCell>
+            <StyledTableCell align="center">{row.support}</StyledTableCell>
+            <StyledTableCell align="center">{row.comments}</StyledTableCell>
+            <StyledTableCell align="center"><FlagIcon onClick={callFlag} cursor="pointer" /></StyledTableCell>
+            <StyledTableCell align="center"><PopUp callDelete={callDelete} /></StyledTableCell>
+
         </>
     )
 }

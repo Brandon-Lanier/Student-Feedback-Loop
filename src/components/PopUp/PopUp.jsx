@@ -8,7 +8,7 @@ import DeleteSweepIcon from '@mui/icons-material/DeleteSweep';
 import { useState } from 'react';
 
 
-function PopUp({callDelete}) {
+function PopUp({ callDelete }) {
   const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
@@ -21,7 +21,7 @@ function PopUp({callDelete}) {
 
   return (
     <div>
-      <DeleteSweepIcon onClick={handleClickOpen} cursor="pointer"/>
+      <DeleteSweepIcon onClick={handleClickOpen} cursor="pointer" />
       <Dialog
         open={open}
         onClose={handleClose}

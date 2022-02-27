@@ -38,30 +38,30 @@ function Review() {
 
     return (
         <Slide direction="up" in="open" mountOnEnter unmountOnExit>
-        <Card sx={{ width: 700 }} >
-        <LinearProgress variant="determinate" value={100} />
-            <CardContent className="review-feedback">
-                <Typography gutterBottom variant="h5">
-                    Review your feedback
-                </Typography>
-                <Typography variant="b1">
-                    Feelings: {feedback.feeling}
-                </Typography>
-                <Typography variant="b1">
-                    Understanding: {feedback.understanding}
-                </Typography>
-                <Typography variant="b1">
-                    Support: {feedback.support}
-                </Typography>
-                <Typography variant="b1">
-                    Comments: {feedback.comments}
-                </Typography>
-            </CardContent>
-            <CardActions className="review-buttons" >
-                <Button size="medium" variant="outlined" onClick={goBack}>Go Back</Button>
-                <Button size="medium" variant="contained" onClick={handleSubmit}>Submit Feedback</Button>
-            </CardActions>
-        </Card>
+            <Card sx={{ width: 700 }} >
+                <LinearProgress variant="determinate" value={100} />
+                <CardContent className="review-feedback">
+                    <Typography gutterBottom variant="h5">
+                        Review your feedback:
+                    </Typography>
+                    <Typography variant="b1">
+                        Feelings: {feedback.feeling}
+                    </Typography>
+                    <Typography variant="b1">
+                        Understanding: {feedback.understanding}
+                    </Typography>
+                    <Typography variant="b1">
+                        Support: {feedback.support}
+                    </Typography>
+                    <Typography variant="b1">
+                        Comments: {feedback.comments}
+                    </Typography>
+                </CardContent>
+                <CardActions className="review-buttons" >
+                    <Button size="medium" variant="outlined" onClick={goBack}>Go Back</Button>
+                    <Button size="medium" variant="contained" onClick={handleSubmit}>Submit Feedback</Button>
+                </CardActions>
+            </Card>
         </Slide>
     )
 }

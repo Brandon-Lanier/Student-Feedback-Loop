@@ -1,82 +1,8 @@
-.styled-table {
-    border-collapse: collapse;
-    margin: 25px 0;
-    font-size: 0.9em;
-    font-family: sans-serif;
-    min-width: 500px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+.tableContainer {
+    display: flex;
+    flex-flow: column wrap;
 }
 
-.styled-table thead tr {
-    background-color: #07aa9e;
-    color: #ffffff;
-    text-align: left;
-}
-
-.styled-table th,
-.styled-table td {
-    padding: 12px 15px;
-}
-
-.styled-table tbody tr {
-    border-bottom: thin solid #dddddd;
-}
-
-.styled-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
-}
-
-.styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #07aa9e;
-}
-
-.styled-table tbody tr.active-row {
-    font-weight: bold;
-    color: #07aa9e;
-}
-
-.flagged-table {
-    border-collapse: collapse;
-    margin: 25px 0;
-    font-size: 0.9em;
-    font-family: sans-serif;
-    min-width: 500px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-}
-
-.flagged-table thead tr {
-    background-color: #a57373;
-    color: #ffffff;
-    text-align: left;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-.flagged-table th,
-.flagged-table td {
-    padding: 12px 15px;
-}
-
-.flagged-table tbody tr {
-    border-bottom: thin solid #dddddd;
-}
-
-.flagged-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
-}
-
-.flagged-table tbody tr:last-of-type {
-    border-bottom: 2px solid #a57373;
-}
-
-.flagged-table tbody tr.active-row {
-    font-weight: bold;
-    color: #a57373;
-}
-
-#th-span {
-    text-align: center;
-    border-bottom: 1px solid rgb(75, 75, 75);
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+.adminTable {
+    margin-bottom: 30px;
 }
