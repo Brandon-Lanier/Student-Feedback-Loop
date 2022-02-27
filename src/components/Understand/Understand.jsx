@@ -31,7 +31,10 @@ function Understand() {
             {dispatch({type: 'ADD_UNDERSTAND', payload: understand})
             history.push('/support');
         } else {
-            Swal.fire('Please enter a selection!')
+            Swal.fire({
+                confirmButtonColor: '#07aa9e',
+                text: 'Please enter a selection!'
+            })
         }
     }
 

@@ -15,7 +15,6 @@ import { useDispatch } from 'react-redux';
 import Swal from 'sweetalert2';
 import { useHistory } from 'react-router-dom';
 import Slide from '@mui/material/Slide';
-import PopUp from '../PopUp/PopUp'
 import LinearProgress from '@mui/material/LinearProgress';
 
 
@@ -32,7 +31,10 @@ function Feeling() {
             {dispatch({type: 'ADD_FEELING', payload: feeling})
             history.push('/understand');
         } else {
-            Swal.fire('Please enter a selection!')
+            Swal.fire({
+                confirmButtonColor: '#07aa9e',
+                text: 'Please enter a selection!'
+            })
         }
     }
 

@@ -10,8 +10,7 @@ function AdminItem({row, handleFlag, handleDelete}) {
     }
 
     let callDelete = () => {
-        
-        // handleDelete(row.id)
+        handleDelete(row.id)
     }
 
     return (
@@ -22,8 +21,8 @@ function AdminItem({row, handleFlag, handleDelete}) {
             <td>{row.support}</td>
             <td>{row.comments}</td>
             <td><EmojiFlagsIcon onClick={callFlag}/></td>
-            <td><DeleteSweepIcon onClick={callDelete}/></td>
-            <PopUp />
+            <td><PopUp callDelete={callDelete}/></td>
+            
         </>
 
     )
