@@ -1,11 +1,9 @@
-import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import { LinearProgress } from '@mui/material';
 import Typography from '@mui/material/Typography';
-import CardHeader from '@mui/material/CardHeader';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -26,12 +24,11 @@ function Support() {
     const history = useHistory();
 
     const handleSubmit = () => {
-        console.log(support);
-        if (support) {
-            dispatch({ type: 'ADD_SUPPORT', payload: support })
-            history.push('/comments');
+        if (support) { // If support has a value, continue
+            dispatch({ type: 'ADD_SUPPORT', payload: support }) // Pass value to the reducer for store
+            history.push('/comments'); // Move to next page
         } else {
-            Swal.fire({
+            Swal.fire({ // If support has no value, show error
                 confirmButtonColor: '#07aa9e',
                 text: 'Please enter a selection!'
             })
@@ -39,7 +36,7 @@ function Support() {
     }
 
     const goBack = () => {
-        history.push('/understand');
+        history.push('/understand'); // Go back to last page
     }
 
     return (

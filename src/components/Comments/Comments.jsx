@@ -1,4 +1,3 @@
-import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -14,20 +13,19 @@ import { Slide } from '@mui/material';
 
 function Comments() {
 
-    const [comments, setComments] = useState('');
+    const [comments, setComments] = useState(''); // Locally storing the user input
 
     const dispatch = useDispatch();
     const history = useHistory();
 
     const handleSubmit = () => {
         console.log(comments);
-        dispatch({ type: 'ADD_COMMENTS', payload: comments });
+        dispatch({ type: 'ADD_COMMENTS', payload: comments }); // Send to reducer to store
         history.push('/review');
-
     }
 
     const goBack = () => {
-        history.push('/support');
+        history.push('/support'); // Go back to previous page
     }
 
     return (
@@ -37,7 +35,7 @@ function Comments() {
                     <LinearProgress variant="determinate" value='80' />
                     <CardContent>
                         <Typography gutterBottom variant="h5">
-                            How well are you being supported?
+                            Please let us know any additional comments.
                         </Typography>
                         <TextField
                             id="standard-multiline-static"

@@ -9,6 +9,9 @@ import { useState } from 'react';
 
 
 function PopUp({ callDelete }) {
+
+  // This component handles the delete confirmation on the admin page.
+  
   const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {

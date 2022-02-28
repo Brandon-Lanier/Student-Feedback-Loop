@@ -6,13 +6,17 @@ import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 
 function AdminItem({ row, handleFlag, handleDelete }) {
 
+     // On click, pass the row id up to the handle delete function in Admin
     let callFlag = () => {
         handleFlag(row.id, row)
     }
 
+    // On click, pass the item id that was clicked up to handle delete for deletion
     let callDelete = () => {
         handleDelete(row.id)
     }
+
+    // Style override of MUI table
     const StyledTableCell = styled(TableCell)(({ theme }) => ({
         [`&.${tableCellClasses.head}`]: {
             backgroundColor: theme.palette.common.black,
@@ -25,7 +29,6 @@ function AdminItem({ row, handleFlag, handleDelete }) {
 
     return (
         <>
-
             <StyledTableCell align="center">{row.feeling}</StyledTableCell>
             <StyledTableCell align="center">{row.understanding}</StyledTableCell>
             <StyledTableCell align="center">{row.support}</StyledTableCell>

@@ -1,6 +1,3 @@
-
-   
-import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -19,20 +16,22 @@ import Slide from '@mui/material/Slide';
 import LinearProgress from '@mui/material/LinearProgress';
 
 
+
 function Feeling() {
 
-    const [feeling, setFeeling] = useState('');
+    
     const dispatch = useDispatch();
 
     const history = useHistory();
 
+    const [feeling, setFeeling] = useState(''); // Hold the user input before sending to reducer.
+
     const handleSubmit = () => {
-        console.log(feeling);
-        if (feeling) {
-            dispatch({ type: 'ADD_FEELING', payload: feeling })
-            history.push('/understand');
+        if (feeling) { // If a value is selected, then continue
+            dispatch({ type: 'ADD_FEELING', payload: feeling }) // Send to reducer to put in store
+            history.push('/understand'); // Continue to next page
         } else {
-            Swal.fire({
+            Swal.fire({ //Error message if no input is selected.
                 confirmButtonColor: '#07aa9e',
                 text: 'Please enter a selection!'
             })
