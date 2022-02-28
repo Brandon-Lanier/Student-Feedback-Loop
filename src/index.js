@@ -9,6 +9,7 @@ import logger from 'redux-logger';
 import { createTheme, ThemeProvider } from '@mui/material';
 
 
+// Adjusting the MUI theme palette to match Prime colors
 const theme = createTheme({
     palette: {
       primary: {
@@ -21,6 +22,7 @@ const theme = createTheme({
     }
   });
 
+// Default sate of feedback reducer.
 const feedback = {
     feeling: 0,
     understanding: 0,
@@ -28,6 +30,7 @@ const feedback = {
     comments: ''
 }
 
+// Reducer to handle holding the feedback values in the redux store
 const feedbackReducer = (state = feedback, action) => {
     if (action.type === 'ADD_FEELING') {
         return {...state, feeling: action.payload}
@@ -55,7 +58,6 @@ const storeInstance = createStore(
 
 ReactDOM.render(
     <Provider store={storeInstance}>
-    
     <ThemeProvider theme={theme}>
         <App />
     </ThemeProvider>

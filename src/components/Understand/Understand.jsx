@@ -1,10 +1,8 @@
-import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import CardHeader from '@mui/material/CardHeader';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -20,18 +18,18 @@ import { LinearProgress } from '@mui/material';
 
 function Understand() {
 
-    const [understand, setUnderstand] = useState('');
+    const [understand, setUnderstand] = useState(''); // Hold user input locally
 
     const dispatch = useDispatch();
     const history = useHistory();
 
     const handleSubmit = () => {
         console.log(understand);
-        if (understand) {
-            dispatch({ type: 'ADD_UNDERSTAND', payload: understand })
-            history.push('/support');
+        if (understand) { // If user input has a value, continue
+            dispatch({ type: 'ADD_UNDERSTAND', payload: understand }) // Send to reducer to put in store.
+            history.push('/support'); // Go to next page
         } else {
-            Swal.fire({
+            Swal.fire({ //Error message if no input is selected.
                 confirmButtonColor: '#07aa9e',
                 text: 'Please enter a selection!'
             })
@@ -66,7 +64,6 @@ function Understand() {
                                 <FormControlLabel value="3" control={<Radio />} label="3" />
                                 <FormControlLabel value="4" control={<Radio />} label="4" />
                                 <FormControlLabel value="5" control={<Radio />} label="5" />
-
                             </RadioGroup>
                         </FormControl>
                     </CardContent>

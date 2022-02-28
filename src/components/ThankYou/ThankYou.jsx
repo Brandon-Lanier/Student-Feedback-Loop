@@ -10,26 +10,26 @@ import { useHistory } from 'react-router-dom';
 function ThankYou() {
 
     const history = useHistory();
-    
+
     const handleSubmit = () => {
-        history.push('/')
+        history.push('/') // Go back to homepage to start over
     }
 
     return (
         <Slide direction="right" in="open" mountOnEnter unmountOnExit>
-        <Card sx={{ width: 700 }} >
-            <CardContent>
-                <Typography gutterBottom variant="h5">
-                    Thank You For Your Feedback!
-                </Typography>
-                <Typography variant="b1">
-                We value your input.
-                </Typography>
-            </CardContent>
-            <CardActions className="review-buttons">
-                <Button size="medium" justify="center" variant="contained" onClick={handleSubmit}>Start Over</Button>
-            </CardActions>
-        </Card>
+            <Card sx={{ width: 700 }} >
+                <CardContent>
+                    <Typography gutterBottom variant="h5">
+                        Thank You For Your Feedback!
+                    </Typography>
+                    <Typography variant="b1">
+                        We value your input.
+                    </Typography>
+                </CardContent>
+                <CardActions className="review-buttons">
+                    <Button size="medium" justify="center" variant="contained" onClick={handleSubmit}>Start Over</Button>
+                </CardActions>
+            </Card>
         </Slide>
     )
 }

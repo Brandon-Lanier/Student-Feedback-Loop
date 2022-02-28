@@ -10,8 +10,11 @@ import { useHistory } from 'react-router-dom';
 import { useEffect } from 'react';
 
 
-function DialogModal({handleClickOpen}) {
+function DialogModal() {
   
+  // Currently not functioning.  Was trying to use this as a dialog for when an input was not selected.
+  // Was unable to figure out how to use it within each input
+
   const [open, setOpen] = useState(true);
 
   const handleClickOpen = () => {
@@ -31,7 +34,7 @@ function DialogModal({handleClickOpen}) {
         aria-describedby="alert-dialog-description"
       >
         <DialogTitle id="alert-dialog-title">
-          {"Use Google's location service?"}
+          {"Invalid Entry"}
         </DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
