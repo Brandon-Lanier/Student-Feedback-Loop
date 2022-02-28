@@ -14,14 +14,22 @@ import { useDispatch } from 'react-redux';
 import Swal from 'sweetalert2';
 import { useHistory } from 'react-router-dom';
 import { Slide } from '@mui/material';
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
 
 function Support() {
+
+    useEffect(() => {
+        setSupport(oldSupport)}, // Display on load if the user hits the back button
+        []);
 
     const [support, setSupport] = useState('');
 
     const dispatch = useDispatch();
     const history = useHistory();
+
+    const oldSupport = useSelector(store => store.feedbackReducer.support); // Holds value if user goes back.
 
     const handleSubmit = () => {
         if (support) { // If support has a value, continue

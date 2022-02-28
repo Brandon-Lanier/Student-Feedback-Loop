@@ -9,14 +9,22 @@ import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import TextField from '@mui/material/TextField';
 import { Slide } from '@mui/material';
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
 
 function Comments() {
+
+    useEffect(() => {
+        setComments(oldComments)}, // Display on load if the user hits the back button
+        []);
 
     const [comments, setComments] = useState(''); // Locally storing the user input
 
     const dispatch = useDispatch();
     const history = useHistory();
+
+    const oldComments = useSelector(store => store.feedbackReducer.comments);
 
     const handleSubmit = () => {
         console.log(comments);

@@ -14,17 +14,24 @@ import Swal from 'sweetalert2';
 import { useHistory } from 'react-router-dom';
 import Slide from '@mui/material/Slide';
 import LinearProgress from '@mui/material/LinearProgress';
-
+import DialogModal from '../DialogModal/DialogModal'
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
 
 function Feeling() {
-
     
+    useEffect(() => {
+        setFeeling(oldFeeling)}, // Display on load if the user hits the back button
+        []);
+
     const dispatch = useDispatch();
 
     const history = useHistory();
 
     const [feeling, setFeeling] = useState(''); // Hold the user input before sending to reducer.
+    
+    const oldFeeling = useSelector(store => store.feedbackReducer.feeling);
 
     const handleSubmit = () => {
         if (feeling) { // If a value is selected, then continue
@@ -37,6 +44,8 @@ function Feeling() {
             })
         }
     }
+
+
 
     const goBack = () => {
         history.push('/')

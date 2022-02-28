@@ -24,9 +24,9 @@ const theme = createTheme({
 
 // Default sate of feedback reducer.
 const feedback = {
-    feeling: 0,
-    understanding: 0,
-    support: 0,
+    feeling: null,
+    understanding: null,
+    support:  null,
     comments: ''
 }
 

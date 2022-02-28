@@ -14,11 +14,19 @@ import { useDispatch } from 'react-redux';
 import Swal from 'sweetalert2';
 import { useHistory } from 'react-router-dom';
 import { LinearProgress } from '@mui/material';
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
 
 function Understand() {
 
+    useEffect(() => {
+        setUnderstand(oldUnderstand)}, // Display on load if the user hits the back button
+        []);
+
     const [understand, setUnderstand] = useState(''); // Hold user input locally
+
+    const oldUnderstand = useSelector(store => store.feedbackReducer.understanding); //Holds previous value if selected
 
     const dispatch = useDispatch();
     const history = useHistory();
